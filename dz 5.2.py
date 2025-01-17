@@ -19,9 +19,5 @@ while True:
     print(result)
 
     restart = input("To continue, type 'yes'.").lower()
-    if restart.lower() == "yes" :
-        continue
-
-
-    else:
+    if restart != "yes" :
         break

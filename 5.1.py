@@ -9,7 +9,7 @@ elif any(char in string.punctuation and char != "_" or char.isupper() for char i
     print(False)
 elif input_string in keyword.kwlist:
     print(False)
-elif input_string.strip("_") == "":
+elif input_string.count("_")>1:
     print(False)
 else:
     print(True)

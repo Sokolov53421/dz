@@ -13,9 +13,7 @@ elif input_string in keyword.kwlist:
     print(False)
 elif input_string == "__":
     print(False)
-elif input_string.startswith("__")and input_string.count("_")>2:
-    print(False)
-elif input_string.count("_")>1 and not input_string.startswith("__"):
+elif input_string.startswith("__") and input_string.count("_") > 2:
     print(False)
 else:
     print(True)

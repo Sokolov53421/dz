@@ -7,12 +7,12 @@ if 0 <= seconds < 8640000:
     result_seconds = seconds % 60
     result_minutes = minutes % 60
     result_hours = hours % 24
-    if 11 <= days %100 <= 19:
+    if 11 <= days % 100 <= 19:
         days_word = "днів"
-    elif days %10 == 1:
-        days_word="день"
-    elif 2<=days % 10 <=4:
-        days_word="дні"
+    elif days % 10 == 1:
+        days_word = "день"
+    elif 2 <= days % 10 <= 4:
+        days_word = "дні"
     else:
         days_word = "днів"
 

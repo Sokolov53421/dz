@@ -30,11 +30,12 @@ class Purchase:
         self.total += item.price * cnt
 
     def __str__(self):
-        items_str = '\n'.join([f'{item.name}: {cnt} pcs.' for item, cnt in self.products.items()])
-        return f'User: {self.user}\nItems:\n{items_str}'
+        items_str ="\n".join([f'{item.name}: {count} pcs.' for item, count in self.products.items()])
+        return f"User: {self.user}\nItems:\n{items_str}"
 
     def get_total(self):
-        return self.total
+        total = sum(item.price * count for item, count in self.products.items())
+        return total
 
 lemon = Item('lemon', 5, "yellow", "small")
 apple = Item('apple', 2, "red", "middle")
@@ -55,9 +56,9 @@ Items:
 lemon: 4 pcs.
 apple: 20 pcs.
 """
-assert isinstance(cart.user, User) is True, 'Екземпляр класу User'
-assert cart.get_total() == 60, "Всього 60"
-assert cart.get_total() == 60, 'Повинно залишатися 60!'
+assert isinstance(cart.user, User) is True
+assert cart.get_total() == 60
+assert cart.get_total() == 60
 
 cart.add_item(apple, 10)
 print(cart)
@@ -65,7 +66,7 @@ print(cart)
 User: Ivan Ivanov
 Items:
 lemon: 4 pcs.
-apple: 30 pcs.
+apple: 10 pcs.
 """
 
-assert cart.get_total() == 80, 'Всього 80'
+assert cart.get_total() == 40

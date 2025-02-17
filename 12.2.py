@@ -27,15 +27,15 @@ class Purchase:
 
     def add_item(self, item, cnt):
         self.products[item] = cnt
-        self.total += item.price * cnt
 
     def __str__(self):
-        items_str ="\n".join([f'{item.name}: {count} pcs.' for item, count in self.products.items()])
+        items_str = "\n".join([f'{item.name}: {count} pcs.' for item, count in self.products.items()])
         return f"User: {self.user}\nItems:\n{items_str}"
 
     def get_total(self):
         total = sum(item.price * count for item, count in self.products.items())
         return total
+
 
 lemon = Item('lemon', 5, "yellow", "small")
 apple = Item('apple', 2, "red", "middle")
